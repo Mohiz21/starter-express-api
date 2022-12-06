@@ -1,5 +1,5 @@
 var router = require('express').Router();
-var AdminController =  require('../../controller/AdminController')
+var AdminController =  require('../../controller/adminController')
  
 router.post("/",AdminController.addAdmin)
 router.post("/login", AdminController.loginAdmin)
