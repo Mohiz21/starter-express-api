@@ -1,4 +1,4 @@
-const AdminService = require("../services/Admins");
+const AdminService = require("../services/admins");
 const { AdminsModel } = require("../models");
 const AdminPass = new AdminsModel();
 
