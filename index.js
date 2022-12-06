@@ -10,8 +10,8 @@ const app = express();
 dotenv.config();   
 
 const db = process.env.MONGO_URI;
-const port = process.env.PORT;
-
+const port = process.env.PORT || 8080;
+const routes = require('./src/routes')
 //Middleware packages
 app.use(cors());
 app.use(require('morgan')('dev'));
@@ -27,7 +27,7 @@ mongoose
   .then(() => console.log("DataBase has been connected !"))
   .catch((err) => console.log("Cannot connect to database", err.message));
 
-app.use("/api", require('./src/routes'));
+app.use("/api", routes);
 
 app.use((err,req,res,next)=>{
   // console.error(err);
