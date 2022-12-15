@@ -16,6 +16,14 @@ const EmployeeSchema = new Schema({
         type:String,
         default:"",
     },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Categories"
+    },
+    subCategory: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Categories"
+    },
     country:{
         type:String,
         default:""
@@ -34,17 +42,12 @@ const EmployeeSchema = new Schema({
     salarywant: {
         type:String,
     },
-    contact: {
-        type:String,
-        default: ""
-    },
-    email: {
-        type:String,
-        default: ""
-    },
     jobdescription: {
         type:String,
         default: ""
+    },
+    siteremote: {
+        type: String,
     },
     duration: {
         type: Date

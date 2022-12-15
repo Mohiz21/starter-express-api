@@ -30,6 +30,10 @@ const ShopSchema = new Schema({
     businessCategory: {
         type: String
     },
+    businessType: {
+        type: String,
+        enum: ['jobs', 'property', 'newItem', 'oldItem', 'homeItem', 'gems', 'services', 'transport', 'vehicles'],
+    },
     image: {
         type:String,
         default: ""

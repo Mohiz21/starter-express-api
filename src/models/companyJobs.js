@@ -15,13 +15,13 @@ const JobsSchema = new Schema({
         type:String,
         default:"",
     },
-    email:{
-        type:String,
-        required:true,
-        default:""
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Categories"
     },
-    contactnumber: {
-        type:String,
+    subCategory: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Categories"
     },
     country: {
         type: String,

@@ -21,6 +21,14 @@ const ShopItemSchema = new Schema({
         type:String,
         default:"",
     },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Categories"
+    },
+    subCategory: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Categories"
+    },
     state:{
         type:String,
         default:"",

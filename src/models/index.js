@@ -1,5 +1,6 @@
 const UsersModel = require("./user");
 const AdminsModel = require("./admin");
+const CategoriesModel = require("./category");
 const CompanysModel = require("./company");
 const JobsModel = require("./companyJobs");
 const EmployeeModel = require("./employee");
@@ -16,5 +17,6 @@ module.exports = {
     ShopItemModel,
     ServiceModel,
     PropertyAdsModel,
-    AdminsModel
+    AdminsModel,
+    CategoriesModel
 }

@@ -69,6 +69,32 @@ exports.getSingleEmployee = async (req, res, next) => {
   }
 };
 
+exports.filterEmployeByCategory = async (req, res, next) => {
+  try {
+    query = {}
+    if(req.query.category) query.category = req.query.category
+    if(req.query.subCategory) query.subCategory = req.query.subCategory
+    const Employee = await EmployeeService.filterEmployee(query);
+    if (!Employee)
+      return next({
+        success: false,
+        data: {},
+        message: "Employee Not found",
+        status: 404,
+      });
+    return res.status(200).json({
+      success: true,
+      data: {
+        Employee,
+      },
+      message: "ok",
+      status: 200,
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
 exports.updateEmployee = async (req, res, next) => {
   try {
     const Employee = await EmployeeService.updateEmployee({ _id: req.query.id }, req.body);

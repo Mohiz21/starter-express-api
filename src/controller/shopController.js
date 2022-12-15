@@ -24,14 +24,7 @@ exports.addShop = async (req, res, next) => {
 };
 exports.getAllShops = async (req, res, next) => {
   try {
-    const query={
-        
-    };
-
-    if(req.query.userid){
-      query.userid = req.query.userid;
-    }
-    const Shops = await ShopService.getShops(query);
+    const Shops = await ShopService.getShops(req.query);
     return res.status(200).json({
       success: true,
       data: {

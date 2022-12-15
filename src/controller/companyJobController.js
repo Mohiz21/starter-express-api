@@ -64,6 +64,33 @@ exports.getSingleJob = async (req, res, next) => {
   }
 };
 
+exports.filterJobByCategory = async (req, res, next) => {
+  try {
+    query = {}
+    if(req.query.category) query.category = req.query.category
+    if(req.query.subCategory) query.subCategory = req.query.subCategory
+    const job = await JobsService.filterJob(query);
+    console.log(job);
+    if (!job)
+      return next({
+        success: false,
+        data: {},
+        message: "job Not found",
+        status: 404,
+      });
+    return res.status(200).json({
+      success: true,
+      data: {
+        job,
+      },
+      message: "ok",
+      status: 200,
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
 exports.updateJob = async (req, res, next) => {
   try {
     const job = await JobsService.updateJob({ _id: req.query.id }, req.body);
