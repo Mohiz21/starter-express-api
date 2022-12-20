@@ -20,17 +20,23 @@ exports.addProperty = async (req, res, next) => {
 };
 exports.getAllProperties = async (req, res, next) => {
   try {
-    const query={
-        
-    };
+    const Companies = await PropertyService.getProperties(req.query);
+    return res.status(200).json({
+      success: true,
+      data: {
+        Companies,
+      },
+      message: "ok",
+      status: 200,
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
 
-    if(req.query.userid){
-      query.userid = req.query.userid;
-    }
-    if(req.query.companyid){
-        query.companyid = req.query.companyid;
-      }
-    const Companies = await PropertyService.getProperties(query);
+exports.getAllPropertyCompanies = async (req, res, next) => {
+  try {
+    const Companies = await PropertyService.getComapanyProperties(req.query);
     return res.status(200).json({
       success: true,
       data: {

@@ -20,14 +20,7 @@ exports.addService = async (req, res, next) => {
 };
 exports.getAllServices = async (req, res, next) => {
   try {
-    const query={
-        
-    };
-
-    if(req.query.userid){
-      query.userid = req.query.userid;
-    }
-    const Services = await ServiceService.getServices(query);
+    const Services = await ServiceService.getServices(req.query);
     return res.status(200).json({
       success: true,
       data: {

@@ -17,6 +17,10 @@ class PropertyService {
     return PropertyAdsModel.find(req);
   }
 
+  getComapanyProperties(req){
+    return PropertyAdsModel.find(req);
+  }
+
   deleteProperty(req) {
     return PropertyAdsModel.findOneAndDelete(req);
   }
