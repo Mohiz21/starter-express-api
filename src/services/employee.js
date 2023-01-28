@@ -17,6 +17,8 @@ class EmployeeService {
     }).populate({
         path: 'subCategory',
         select: 'name'
+    }).populate({
+      path: 'userid',
     })
   }
 

@@ -12,9 +12,9 @@ const PropertyAdsSchema = new Schema({
         type:String,
         default:"",
     },
-    category:{
-        type:String,
-        default:"",
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Categories"
     },
     country: {
         type: String,

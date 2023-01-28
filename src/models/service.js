@@ -6,13 +6,13 @@ const ServicesSchema = new Schema({
         type:String,
         required:true
     },
-    category:{
-        type:String,
-        default:"",
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Categories"
     },
-    subcategory:{
-        type:String,
-        default:"",
+    subCategory: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Categories"
     },
     email:{
         type:String,

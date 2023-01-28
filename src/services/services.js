@@ -13,6 +13,16 @@ class ServicesService {
     return ServiceModel.findOneAndUpdate(req, data, { new: true });
   }
 
+  filterService(req) {
+    return ServiceModel.find(req).populate({
+      path: 'category',
+      select: 'name'
+    }).populate({
+      path: 'subCategory',
+      select: 'name'
+  })
+  }
+
   getServices(req) {
     return ServiceModel.find(req);
   }

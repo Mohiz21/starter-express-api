@@ -3,10 +3,6 @@ const EmployeeService = require("../services/employee");
 exports.addEmployee = async (req, res, next) => {
   try {
     const { body } = req;
-    let employee = await EmployeeService.getEmployee({jobtitle:body.jobtitle});
-    if(employee)
-      return next({ message: "job title Already exists", status: 422 });
-
     const Employee = EmployeeService.newEmployee(body);
 
     await Employee.save();
@@ -47,7 +43,7 @@ exports.getAllEmployees = async (req, res, next) => {
 
 exports.getSingleEmployee = async (req, res, next) => {
   try {
-    const Employee = await EmployeeService.getEmployee({ _id: req.query.id });
+    const Employee = await EmployeeService.getEmployee({ userid: req.query.id });
     console.log(Employee);
     if (!Employee)
       return next({

@@ -121,3 +121,30 @@ exports.deleteProperty = async (req, res, next) => {
     return next(error);
   }
 };
+
+exports.filterPropertyByCategory = async (req, res, next) => {
+  try {
+    query = {}
+    if(req.query.category) query.category = req.query.category
+    if(req.query.subCategory) query.subCategory = req.query.subCategory
+    const job = await PropertyService.filterProperty(query);
+    console.log(job);
+    if (!job)
+      return next({
+        success: false,
+        data: {},
+        message: "property Not found",
+        status: 404,
+      });
+    return res.status(200).json({
+      success: true,
+      data: {
+        job,
+      },
+      message: "ok",
+      status: 200,
+    });
+  } catch (error) {
+    return next(error);
+  }
+};

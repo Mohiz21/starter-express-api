@@ -3,13 +3,12 @@ const Schema = mongoose.Schema;
 
 const EmployeeSchema = new Schema({
     userid:{
-        type:String,
-        required:true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "users"
     },
     jobtitle:{
         type:String,
         default:"",
-        unique: true,
         required:true,
     },
     jobtype:{

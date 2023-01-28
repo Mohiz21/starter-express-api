@@ -8,5 +8,6 @@ router.delete("/", PropertyController.deleteProperty)
 router.get("/id",PropertyController.getSingleProperty)
 router.get("/user",PropertyController.getAllProperties)
 router.get("/company",PropertyController.getAllPropertyCompanies)
+router.get("/filter",PropertyController.filterPropertyByCategory)
 
 module.exports = router;

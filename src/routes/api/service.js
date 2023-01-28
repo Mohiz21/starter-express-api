@@ -7,5 +7,6 @@ router.put("/id", ServiceController.updateService)
 router.delete("/", ServiceController.deleteService)
 router.get("/id",ServiceController.getSingleService)
 router.get("/user",ServiceController.getAllServices)
+router.get("/filter",ServiceController.filterServiceByCategory)
 
 module.exports = router;

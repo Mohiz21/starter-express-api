@@ -5,7 +5,7 @@ const CategorySchema = new Schema({
     type:{
         type:String,
         default:"",
-        enum: ['jobs', 'property', 'newItem', 'oldItem', 'homeItem', 'gems', 'services', 'transport', 'vehicles'],
+        enum: ['jobs', 'property', 'farming', 'scrap', 'recycled', 'newItem', 'oldItem', 'homeItem', 'gems', 'services', 'transport', 'vehicles'],
     },
     name:{
         type:String,
