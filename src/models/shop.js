@@ -32,7 +32,7 @@ const ShopSchema = new Schema({
     },
     businessType: {
         type: String,
-        enum: ['jobs', 'property', 'newItem', 'oldItem', 'homeItem', 'gems', 'services', 'transport', 'vehicles'],
+        enum: ['jobs', 'property', 'newItem', 'oldItem', 'homeItem', 'gems', 'services', 'transport', 'vehicles', 'farming', 'recycle'],
     },
     image: {
         type:String,

@@ -5,7 +5,7 @@ const CategorySchema = new Schema({
     type:{
         type:String,
         default:"",
-        enum: ['jobs', 'property', 'farmingShop', 'farmingShopItem', 'scrap', 'recycledShop', 'recycledShopItem', 'newShop', 'newShopItem', 'oldShop', 'oldShopItem', 'homeShop', 'homeShopItem', 'gemsShop', 'gemsShopItem', 'services', 'transport', 'vehicles'],
+        enum: ['jobs', "businessCategory",  'property', 'farmingShop', 'farmingShopItem', 'scrap', 'recycledShop', 'recycledShopItem', 'newShop', 'newShopItem', 'oldShop', 'oldShopItem', 'homeShop', 'homeShopItem', 'gemsShop', 'gemsShopItem', 'services', 'transport', 'vehicles'],
     },
     name:{
         type:String,
