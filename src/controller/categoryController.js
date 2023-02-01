@@ -68,7 +68,8 @@ exports.getSingleCategory = async (req, res, next) => {
 
 exports.getCategoryByType = async (req, res, next) => {
     try {
-      const Category = await Categories.getCategories({ type: req.query.type });
+      let query = req.query
+      const Category = await Categories.getCategories({ query });
       console.log(Category);
       if (!Category)
         return next({

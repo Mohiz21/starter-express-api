@@ -14,7 +14,7 @@ class CategoryService {
   }
 
   getCategories(req) {
-    return CategoriesModel.find(req);
+    return CategoriesModel.find(req.query);
   }
 
   deleteCategory(req) {
