@@ -32,23 +32,11 @@ const ShopSchema = new Schema({
     },
     businessType: {
         type: String,
-        enum: ['jobs', 'property', 'newItem', 'oldItem', 'homeItem', 'gems', 'services', 'transport', 'vehicles', 'farming', 'recycle'],
+        enum: ['company', 'property', 'newShop', 'oldShop', 'homeShop', 'gemsShop', 'services', 'transport', 'vehicles', 'farming', 'recycle'],
     },
     image: {
         type:String,
         default: ""
-    },
-    isFirstHand: {
-        type: Boolean,
-    },
-    isSecondHand: {
-        type: Boolean,
-    },
-    isHomeMade: {
-        type: Boolean,
-    },
-    isGem: {
-        type: Boolean,
     },
     status:{
         type:Boolean,
