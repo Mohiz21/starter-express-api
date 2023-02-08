@@ -69,8 +69,11 @@ exports.getSingleCategory = async (req, res, next) => {
 exports.getCategoryByType = async (req, res, next) => {
     try {
       let query = req.query
-      const Category = await Categories.getCategories({ query });
-      console.log(Category);
+      if(req.query.parentCategory) {
+        const regex = new RegExp('a-z', 'i')
+        query.parentCategory = {"$exists" : true, "$ne" : ""}
+      }
+      const Category = await Categories.getCategories( query );
       if (!Category)
         return next({
           success: false,
