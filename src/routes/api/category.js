@@ -7,5 +7,6 @@ router.put("/id", CategoryController.updateCategory)
 router.delete("/", CategoryController.deleteCategory)
 router.get("/id",CategoryController.getSingleCategory)
 router.get("/type",CategoryController.getCategoryByType)
+router.get("/consumer",CategoryController.getCategoryByConsumer)
 
 module.exports = router;

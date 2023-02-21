@@ -73,6 +73,7 @@ exports.getCategoryByType = async (req, res, next) => {
         const regex = new RegExp('a-z', 'i')
         query.parentCategory = {"$exists" : true, "$ne" : ""}
       }
+      console.log('query', query);
       const Category = await Categories.getCategories( query );
       if (!Category)
         return next({
@@ -92,6 +93,31 @@ exports.getCategoryByType = async (req, res, next) => {
     } catch (error) {
       return next(error);
     }
+};
+
+exports.getCategoryByConsumer = async (req, res, next) => {
+  try {
+    let query = req.query;
+    console.log('query', query);
+    const Category = await Categories.getCategories( query );
+    if (!Category)
+      return next({
+        success: false,
+        data: {},
+        message: "Category Not found",
+        status: 404,
+      });
+    return res.status(200).json({
+      success: true,
+      data: {
+        Category,
+      },
+      message: "ok",
+      status: 200,
+    });
+  } catch (error) {
+    return next(error);
+  }
 };
 
 exports.updateCategory = async (req, res, next) => {

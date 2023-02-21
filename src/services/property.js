@@ -21,10 +21,7 @@ class PropertyService {
     return PropertyAdsModel.find(req).populate({
       path: 'category',
       select: 'name'
-    }).populate({
-      path: 'subCategory',
-      select: 'name'
-  })
+    })
   }
 
   getComapanyProperties(req){

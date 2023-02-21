@@ -39,7 +39,7 @@ const ServicesSchema = new Schema({
     images: {
         type:Array,
     },
-    services: {
+    portfolioImages: {
         type:Array,
     },
     status:{
