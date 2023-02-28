@@ -111,7 +111,7 @@ exports.filterServiceByCategory = async (req, res, next) => {
     query = {}
     if(req.query.category) query.category = req.query.category
     if(req.query.subCategory) query.subCategory = req.query.subCategory
-    const job = await ServiceService.filterService(query);
+    const job = await ServiceService.filterService(req.query);
     console.log(job);
     if (!job)
       return next({

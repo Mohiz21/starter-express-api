@@ -70,7 +70,7 @@ exports.filterEmployeByCategory = async (req, res, next) => {
     query = {}
     if(req.query.category) query.category = req.query.category
     if(req.query.subCategory) query.subCategory = req.query.subCategory
-    const Employee = await EmployeeService.filterEmployee(query);
+    const Employee = await EmployeeService.filterEmployee(req.query);
     if (!Employee)
       return next({
         success: false,
