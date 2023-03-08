@@ -1,4 +1,4 @@
-const { EmployeeModel } = require("../models");
+const { EmployeeModel, UsersModel } = require("../models");
 
 class EmployeeService {
   newEmployee(request) {
@@ -6,7 +6,7 @@ class EmployeeService {
   }
 
   getEmployee(req) {
-    return EmployeeModel.findOne(req);
+    return UsersModel.findOne(req);
   }
 
   filterEmployee(req) {

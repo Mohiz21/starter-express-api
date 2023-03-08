@@ -43,7 +43,7 @@ exports.getAllEmployees = async (req, res, next) => {
 
 exports.getSingleEmployee = async (req, res, next) => {
   try {
-    const Employee = await EmployeeService.getEmployee({ userid: req.query.id });
+    const Employee = await EmployeeService.getEmployee({ _id: req.query.id });
     console.log(Employee);
     if (!Employee)
       return next({
