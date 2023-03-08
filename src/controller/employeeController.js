@@ -27,7 +27,7 @@ exports.getAllEmployees = async (req, res, next) => {
     if(req.query.userid){
       query.userid = req.query.userid;
     }
-    const Employees = await EmployeeService.getCompanies(query);
+    const Employees = await EmployeeService.getEmployees(query);
     return res.status(200).json({
       success: true,
       data: {
